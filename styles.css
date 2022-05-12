@@ -1,0 +1,221 @@
+/* ====================   Reset  ===================== */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* ====================   End Reset  ===================== */
+
+:root {
+  --clr-bg-1: hsl(141, 45%, 81%);
+  --clr-bg-2: hsl(210, 17%, 98%);
+  --clr-bg-card: hsl(0, 0%, 99%);
+  --clr-text-header: hsl(210, 11%, 15%);
+  --clr-text-body: hsl(208, 7%, 46%);
+  --clr-stars: hsl(43, 74%, 66%);
+}
+
+h1,
+h3 {
+  color: var(--clr-text-header);
+  line-height: 1.2;
+}
+
+p {
+  color: var(--clr-text-body);
+}
+
+body {
+  background: linear-gradient(to bottom, var(--clr-bg-1), var(--clr-bg-2));
+  font-family: "Manrope", sans-serif;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+}
+
+main {
+  max-width: 1440px;
+  margin-inline: auto;
+}
+
+.title,
+.description {
+  text-align: center;
+}
+
+.title {
+  font-size: 2.8rem;
+  font-weight: 800;
+}
+
+.description {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+.cards {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-block: 5rem;
+  margin-inline: auto;
+}
+
+.card {
+  background: var(--clr-bg-card);
+  border-radius: 1.2rem;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 4px 5px 10px 0px hsla(5, 7%, 67%, 25%);
+}
+
+.arrow {
+  width: 50px;
+  height: 50px;
+  border-radius: 1000px;
+  background: var(--clr-bg-card);
+  display: grid;
+  place-items: center;
+  align-self: center;
+  box-shadow: 4px 5px 10px 0px hsla(5, 7%, 67%, 25%);
+  transition: 200ms ease-in-out;
+}
+
+.arrow:hover {
+  background: hsl(141, 45%, 75%);
+  cursor: pointer;
+}
+
+.icon-left,
+.icon-right {
+  font-size: 18px;
+  color: var(--clr-text-header);
+}
+
+.card > * + * {
+  margin-top: 0.2rem;
+}
+
+.customer-photo {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border: 5px solid var(--clr-bg-1);
+  border-radius: 1000px;
+  margin-inline: auto;
+}
+
+.customer-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.customer-profession {
+  font-size: 1rem;
+}
+
+.customer-rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.fa-star {
+  color: var(--clr-stars);
+}
+
+.star-gray {
+  color: hsl(0, 0%, 72%);
+}
+
+.customer-review {
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  max-width: 20ch;
+}
+
+.feedback-button {
+  background: hsl(141, 45%, 75%);
+  color: var(--clr-text-header);
+  font-size: 1.1rem;
+  font-weight: 500;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  border: none;
+  padding: 1rem 3rem;
+  border-radius: 0.7rem;
+  transition: 200ms ease-in-out;
+}
+
+.feedback-button:hover {
+  box-shadow: 1px 2px 10px 0px hsla(5, 7%, 67%, 25%);
+  cursor: pointer;
+  background: hsl(141, 45%, 70%);
+}
+
+.button-arrow {
+  margin-left: 0.5rem;
+}
+
+@media only screen and (max-width: 1100px) {
+  .card-3 {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .arrow {
+    display: none;
+  }
+
+  .card-3 {
+    display: block;
+  }
+}
